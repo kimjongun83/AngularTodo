@@ -1,0 +1,8 @@
+<h3>Todo List</h3>
+<label>New Task:</label>
+<input type="text" [(ngModel)]="newContent">
+<button (click)="addNewTask()">Add New Task</button>
+<ng-container *ngFor="let item of todoItemList$ | async">
+  <app-todo-item [item]="item"></app-todo-item>
+</ng-container>
+<router-outlet></router-outlet>
